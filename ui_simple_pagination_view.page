@@ -1,0 +1,17 @@
+<apex:page showHeader="true" sidebar="true" controller="ui_simple_pagination">
+	<apex:sectionHeader title="Example" subtitle="Simple Pagination" />
+	<apex:form>
+		<apex:pageBlock title="Accounts">
+			<apex:pageBlockButtons location="top">
+				<apex:commandbutton value="Previous" disabled="{!DisablePrevious}" action="{!previous}"></apex:commandbutton>
+				<apex:commandbutton value="Next" disabled="{!DisableNext}" action="{!next}"></apex:commandbutton>
+			</apex:pageBlockButtons>
+			<apex:outputPanel id="account_panel">
+					<apex:pageBlockTable value="{!lstAccount}" var="account">
+						<apex:column headerValue="Id" value="{!account.id}"></apex:column>
+						<apex:column headerValue="Name" value="{!account.name}"></apex:column>
+					</apex:pageBlockTable>
+			</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>
